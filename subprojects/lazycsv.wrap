@@ -1,0 +1,7 @@
+[wrap-git]
+url = https://github.com/ashtum/lazycsv.git
+revision = head
+patch_directory = lazycsv
+
+[provide]
+lazycsv = lazycsv_dep

@@ -1,0 +1,7 @@
+[wrap-git]
+url = https://github.com/TinyTinni/FileSTL.git
+revision = head
+patch_directory = filestl
+
+[provide]
+filestl = filestl_dep

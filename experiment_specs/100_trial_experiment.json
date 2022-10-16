@@ -1,0 +1,5 @@
+{
+  "num_trials": 100,
+  "batch_budget": 5,
+  "max_duration": 400
+}

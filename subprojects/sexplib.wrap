@@ -1,0 +1,6 @@
+[wrap-git]
+url = https://github.com/wbthomason/sexplib.git
+revision = head
+
+[provide]
+sexplib = sexplib_dep

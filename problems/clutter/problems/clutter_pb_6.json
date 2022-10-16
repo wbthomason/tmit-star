@@ -1,0 +1,9 @@
+{
+  "name": "clutter",
+  "domain": "problems/clutter/pddl/domain.pddl",
+  "problem": "problems/clutter/pddl/pb_6.pddl",
+  "initial_scene": "problems/clutter/scenes/pb_6_initial_scene.json",
+  "predicates": "lua/predicates.lua",
+  "collision_blocklist": "models/pr2_collision_blocklist.csv",
+  "min_steps": 12
+}

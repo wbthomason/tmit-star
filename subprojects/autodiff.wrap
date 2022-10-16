@@ -1,0 +1,3 @@
+[wrap-git]
+url = https://github.com/autodiff/autodiff.git
+revision = head

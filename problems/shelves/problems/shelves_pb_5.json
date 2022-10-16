@@ -1,0 +1,9 @@
+{
+  "name": "shelves",
+  "domain": "problems/shelves/pddl/domain.pddl",
+  "problem": "problems/shelves/pddl/pb_5.pddl",
+  "initial_scene": "problems/shelves/scenes/pb_5_initial_scene.json",
+  "predicates": "lua/predicates.lua",
+  "collision_blocklist": "models/pr2_collision_blocklist.csv",
+  "min_steps": 4
+}

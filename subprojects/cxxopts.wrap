@@ -1,0 +1,12 @@
+[wrap-file]
+directory = cxxopts-3.0.0
+source_url = https://github.com/jarro2783/cxxopts/archive/v3.0.0.tar.gz
+source_filename = cxxopts-3.0.0.tar.gz
+source_hash = 36f41fa2a46b3c1466613b63f3fa73dc24d912bc90d667147f1e43215a8c6d00
+patch_filename = cxxopts_3.0.0-1_patch.zip
+patch_url = https://wrapdb.mesonbuild.com/v2/cxxopts_3.0.0-1/get_patch
+patch_hash = 704d7f49f768dde81376a607e9a189bb7e7f151bfc5512d9b7af9e13df2024cb
+
+[provide]
+cxxopts = cxxopts_dep
+

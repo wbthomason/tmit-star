@@ -1,0 +1,7 @@
+[wrap-git]
+url = https://github.com/tinyobjloader/tinyobjloader.git
+revision = head
+patch_directory = tinyobjloader
+
+[provide]
+tinyobjloader = tinyobjloader_dep

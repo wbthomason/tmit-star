@@ -1,0 +1,8 @@
+{
+  "name": "collision_debug",
+  "domain": "problems/debug/pddl/no_moves.pddl",
+  "problem": "problems/debug/pddl/all_sticks_no_moves.pddl",
+  "initial_scene": "problems/debug/scenes/all_sticks_scene.json",
+  "predicates": "lua/predicates.lua",
+  "collision_blocklist": "models/pr2_collision_blocklist.csv"
+}
