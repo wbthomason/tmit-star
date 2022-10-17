@@ -3,15 +3,15 @@ message: "If you use this software in your research, please cite it as below."
 url: https://github.com/wbthomason/tmit-star
 title: "TMIT*: Almost-Surely Asymptotically Optimal Integrated Task and Motion Planning"
 authors:
-  - family-names: Thomason
-    given-names: Wil
-    orcid: 0000-0001-6200-9762
-  - family-names: Strub
-    given-names: Marlin P.
-    orcid: 0000-0003-2185-5852
-  - family-names: Gammell
-    given-names: Jonathan D.
-    orcid: 0000-0002-1034-3889
+  - family-names: "Thomason"
+    given-names: "Wil"
+    orcid: "https://orcid.org/0000-0001-6200-9762"
+  - family-names: "Strub"
+    given-names: "Marlin P."
+    orcid: "https://orcid.org/0000-0003-2185-5852"
+  - family-names: "Gammell"
+    given-names: "Jonathan D."
+    orcid: "https://orcid.org/0000-0002-1034-3889"
 preferred-citation:
   title: "Task and Motion Informed Trees (TMIT*): Almost-Surely Asymptotically Optimal Integrated Task and Motion Planning"
   doi: "10.1109/LRA.2022.3199676"
@@ -19,12 +19,12 @@ preferred-citation:
   type: article
   journal: "IEEE Robotics and Automation Letters"
   authors:
-    - family-names: Thomason
-      given-names: Wil
-      orcid: 0000-0001-6200-9762
-    - family-names: Strub
-      given-names: Marlin P.
-      orcid: 0000-0003-2185-5852
-    - family-names: Gammell
-      given-names: Jonathan D.
-      orcid: 0000-0002-1034-3889
+    - family-names: "Thomason"
+      given-names: "Wil"
+      orcid: "https://orcid.org/0000-0001-6200-9762"
+    - family-names: "Strub"
+      given-names: "Marlin P."
+      orcid: "https://orcid.org/0000-0003-2185-5852"
+    - family-names: "Gammell"
+      given-names: "Jonathan D."
+      orcid: "https://orcid.org/0000-0002-1034-3889"
