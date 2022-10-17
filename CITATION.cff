@@ -1,5 +1,4 @@
 cff-version: 1.2.0
-# CITATION.cff created with https://github.com/monperrus/bibtexbrowser/
 message: "If you use this software in your research, please cite it as below."
 url: https://github.com/wbthomason/tmit-star
 preferred-citation:
