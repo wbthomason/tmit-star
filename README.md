@@ -27,7 +27,7 @@ You'll need to manually install the following dependencies (also listed in `meso
 - [GLFW3](https://www.glfw.org/) (for debug visualizer)
 - [GLM](https://github.com/g-truc/glm) (for debug visualizer)
 - [LuaJIT](https://luajit.org/)
-- [NLOPT](https://github.com/stevengj/nlopt)
+- [NLopt](https://github.com/stevengj/nlopt)
 - [Z3](https://github.com/Z3Prover/z3)
 
 All other dependencies are automatically downloaded and configured in `subprojects/` using Meson's Wrap system.
