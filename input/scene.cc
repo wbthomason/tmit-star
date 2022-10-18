@@ -213,7 +213,7 @@ std::shared_ptr<btCollisionShape> load_obj(const std::filesystem::path& obj_path
                                            float y_scale   = 1.0,
                                            float z_scale   = 1.0,
                                            bool is_concave = false) {
-  auto log = utils::get_logger("exoplanet::input::scene");
+  auto log = utils::get_logger("tmit-star::input::scene");
   tinyobj::ObjReaderConfig obj_reader_config;
   obj_reader_config.mtl_search_path = obj_path.parent_path();
   obj_reader_config.triangulate     = false;
@@ -313,7 +313,7 @@ std::shared_ptr<btCollisionShape> load_stl(const std::filesystem::path& stl_path
                                            float y_scale   = 1.0,
                                            float z_scale   = 1.0,
                                            bool is_concave = false) {
-  auto log                         = utils::get_logger("exoplanet::input::scene");
+  auto log                         = utils::get_logger("tmit-star::input::scene");
   const auto [shape_data, success] = tyti::stl::read(stl_path.string());
   if (!success) {
     log->error("Failed to read .stl file at {}!", stl_path.c_str());
@@ -360,7 +360,7 @@ std::shared_ptr<btCollisionShape> get_shape(const std::filesystem::path& shape_p
                                             float y_scale,
                                             float z_scale,
                                             bool is_concave) {
-  auto log = utils::get_logger("exoplanet::input::scene");
+  auto log = utils::get_logger("tmit-star::input::scene");
   log->debug("Getting object {}", shape_path.c_str());
   ShapeInfo shape_info{shape_path, x_scale, y_scale, z_scale};
   if (!shape_cache.contains(shape_info)) {
@@ -544,7 +544,7 @@ void add_robot_joints(const urdf::LinkConstSharedPtr& link,
       bounds);
       break;
     default:
-      auto log = utils::get_logger("exoplanet::input::scene");
+      auto log = utils::get_logger("tmit-star::input::scene");
       log->warn("Unknown joint type for {}. Treating as fixed!", joint->name);
       sgb.add_robot_joint(
       joint->name,
@@ -565,7 +565,7 @@ void add_robot_joints(const urdf::LinkConstSharedPtr& link,
 bool load_urdf(const std::filesystem::path& urdf_path,
                ScenegraphBuilder& sgb,
                ShapeCache& shape_cache) {
-  auto log         = utils::get_logger("exoplanet::input::scene");
+  auto log         = utils::get_logger("tmit-star::input::scene");
   auto robot_model = urdf::parseURDFFile(urdf_path);
   if (robot_model == nullptr) {
     log->error("Failed to load robot model from {}!", urdf_path.c_str());
@@ -592,7 +592,7 @@ bool load_urdf(const std::filesystem::path& urdf_path,
 }
 
 bool load_object(const json& object_spec, ScenegraphBuilder& sgb, ShapeCache& shape_cache) {
-  auto log = utils::get_logger("exoplanet::input::scene");
+  auto log = utils::get_logger("tmit-star::input::scene");
   if (!object_spec.contains("name")) {
     log->error("Object does not specify a name!");
     return false;
@@ -658,7 +658,7 @@ bool load_object(const json& object_spec, ScenegraphBuilder& sgb, ShapeCache& sh
 
 std::optional<std::pair<std::tuple<double, double, double>, std::unordered_map<std::string, double>>>
 load_robot(const json& robot_spec, ScenegraphBuilder& sgb, ShapeCache& shape_cache) {
-  auto log = utils::get_logger("exoplanet::input::scene");
+  auto log = utils::get_logger("tmit-star::input::scene");
   ENSURE_SPEC_FIELD(robot_spec, "urdf", "No URDF file specified for robot!");
   std::filesystem::path urdf_path(robot_spec["urdf"].get<std::string>());
   if (!std::filesystem::exists(urdf_path)) {
@@ -684,7 +684,7 @@ load_robot(const json& robot_spec, ScenegraphBuilder& sgb, ShapeCache& shape_cac
 
 namespace input::geometric {
 std::optional<SceneInfo> load(const std::filesystem::path& scene_path) {
-  auto log = utils::get_logger("exoplanet::input::scene");
+  auto log = utils::get_logger("tmit-star::input::scene");
   log->debug("Loading robot, objects, and initial scene configuration from {}", scene_path.c_str());
   if (!std::filesystem::exists(scene_path)) {
     log->error("No scene file at provided path!");

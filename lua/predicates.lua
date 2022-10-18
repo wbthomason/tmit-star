@@ -1,5 +1,5 @@
-local dual = require('exoplanet').dual
-local ad_math = require('exoplanet').math
+local dual = require('tmit-star').dual
+local ad_math = require('tmit-star').math
 local max, sqrt = ad_math.max, ad_math.sqrt
 
 function And(a, b)

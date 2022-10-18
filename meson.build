@@ -56,7 +56,7 @@ cpp_args = [
 link_args = ['-fsanitize-recover=all']
 
 source_files = [
-  'exoplanet.cc',
+  'tmit-star.cc',
   'experiments/experiments.cc',
   'input/input.cc',
   'input/pddl.cc',
@@ -83,7 +83,7 @@ source_files = [
 ]
 
 # Main executable
-exoplanet = executable('exoplanet',
+tmit_star = executable('tmit-star',
   source_files,
   include_directories: ['experiments', 'input', 'output', 'planner', 'util', 'itstar'],
   dependencies: dependencies,

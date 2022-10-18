@@ -20,9 +20,9 @@ elif [ "$1" = "rr" ]; then
   shift 1
 fi
 
-cmd=("${prefix[@]}" build/exoplanet "${suffix[@]}" "${@[@]}")
+cmd=("${prefix[@]}" build/tmit-star "${suffix[@]}" "${@[@]}")
 env "${cmd[@]}"
 
 if $profile_run; then
-  perf script -F +pid > exoplanet.perf
+  perf script -F +pid > tmit-star.perf
 fi

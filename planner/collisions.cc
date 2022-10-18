@@ -198,7 +198,7 @@ build_collision_blocklists(const std::filesystem::path& blocklist_file,
                   lazycsv::trim_chars<' ', '\t', '\n', '\r'>>
   csv(blocklist_file.c_str());
   unsigned int row_count = 0;
-  auto log               = utils::get_logger("exoplanet::collision");
+  auto log               = utils::get_logger("tmit-star::collision");
   for (const auto& row : csv) {
     ++row_count;
     const auto& [link_1, link_2] = row.cells(0, 1);
@@ -261,7 +261,7 @@ CollisionChecker::CollisionChecker(const ompl::base::SpaceInformationPtr& si,
 , collision_dispatcher(&collision_configuration)
 , collision_world(&collision_dispatcher, &broadphase_interface, &collision_configuration)
 , bounds(bounds) {
-  auto log                       = utils::get_logger("exoplanet::collision");
+  auto log                       = utils::get_logger("tmit-star::collision");
   const auto& initial_scene_info = *initial_scenegraph.scene_info;
   collision_objects.reserve(initial_scene_info.collision_info.size());
   poses.reserve(initial_scene_info.joint_info.size());

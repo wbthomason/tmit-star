@@ -43,7 +43,7 @@ auto run_experiment(const input::PlanningProblem& problem,
   namespace geom = planner::geometric;
   namespace sym  = planner::symbolic;
 
-  auto log = utils::get_logger("exoplanet::experiment");
+  auto log = utils::get_logger("tmit-star::experiment");
 
   // Setup the planning problem:
   // Copy the initial scenegraph

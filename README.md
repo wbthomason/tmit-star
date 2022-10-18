@@ -35,7 +35,7 @@ All other dependencies are automatically downloaded and configured in `subprojec
 Once all dependencies are installed, run the `./build.sh` script with `zsh`.
 For the basic optimized build, use `./build.sh release --lto`; the script also supports debug, sanitizer, and PGO builds (see the script source for relevant args).
 
-This will result in a binary `build/exoplanet`.
+This will result in a binary `build/tmit-star`.
 
 ## Usage
 

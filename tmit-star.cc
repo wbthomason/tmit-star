@@ -19,7 +19,7 @@
 
 #define FAIL(msg)                               \
   {                                             \
-    spdlog::set_pattern("%^[exoplanet]:%$ %v"); \
+    spdlog::set_pattern("%^[tmit-star]:%$ %v"); \
     log->error(msg);                            \
     return EXIT_FAILURE;                        \
   }
@@ -41,7 +41,7 @@ void sigint_handler(int signum) { sigint_handler_impl(signum); }
 
 int main(int argc, char** argv) {
   // Set up argument parsing and logging
-  cxxopts::Options options("exoplanet", "TAMP via Planet + AIT*");
+  cxxopts::Options options("tmit-star", "ASAO TAMP");
   // clang-format off
   options.add_options()
     ("p,problem_spec", "Problem specification file path", cxxopts::value<std::string>())
@@ -61,7 +61,7 @@ int main(int argc, char** argv) {
   }
 
   spdlog::set_pattern("[%H:%M:%S] %^[%l @ %n]%$ %v");
-  auto log = utils::get_logger("exoplanet");
+  auto log = utils::get_logger("tmit-star");
 
   const auto v_count = cmdline_args.count("verbose");
   if (v_count == 0) {

@@ -13,7 +13,7 @@
 namespace input {
 std::optional<PlanningProblem> load_problem(const std::filesystem::path& problem_spec_path) {
   using json = nlohmann::json;
-  auto log   = utils::get_logger("exoplanet::input::problem");
+  auto log   = utils::get_logger("tmit-star::input::problem");
   log->debug("Loading problem specification from {}", problem_spec_path.c_str());
   if (!std::filesystem::exists(problem_spec_path)) {
     log->error("No problem specification file at given path!");
@@ -89,7 +89,7 @@ constexpr unsigned int MAX_DURATION_DEFAULT              = 100;
 std::optional<ExperimentParameters>
 load_experiment(const std::filesystem::path& experiment_spec_path, const PlanningProblem& problem) {
   using json = nlohmann::json;
-  auto log   = utils::get_logger("exoplanet::input::experiment");
+  auto log   = utils::get_logger("tmit-star::input::experiment");
   if (!std::filesystem::exists(experiment_spec_path)) {
     log->error("No experiment specification file at given path!");
     return std::nullopt;

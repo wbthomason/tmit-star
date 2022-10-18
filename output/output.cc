@@ -138,7 +138,7 @@ void output_plan(const ompl::geometric::PathGeometric* const plan,
   nlohmann::json output_json(plan_steps);
   std::ofstream output_file(output_filepath);
   if (!output_file.is_open()) {
-    auto log = utils::get_logger("exoplanet::output");
+    auto log = utils::get_logger("tmit-star::output");
     log->critical("Couldn't open file {} for plan output!", output_filepath.c_str());
     return;
   }

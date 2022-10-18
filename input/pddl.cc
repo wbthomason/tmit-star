@@ -377,7 +377,7 @@ namespace {
 
 std::optional<std::pair<planner::symbolic::Domain, planner::symbolic::Problem>>
 load(const std::filesystem::path& domain_path, const std::filesystem::path& problem_path) {
-  auto log = utils::get_logger("exoplanet::input::pddl");
+  auto log = utils::get_logger("tmit-star::input::pddl");
   log->debug("Loading domain s-expression from {}", domain_path.c_str());
   if (!std::filesystem::exists(domain_path)) {
     log->error("No domain file at provided path!");

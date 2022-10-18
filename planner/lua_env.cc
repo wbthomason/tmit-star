@@ -25,11 +25,11 @@ extern "C" {
 
 namespace planner::symbolic {
 
-constexpr char DIST_FN_KEY[]           = "exoplanet_dist_fn";
-constexpr char GRAD_FN_KEY[]           = "exoplanet_grad_fn";
-constexpr char PREDICATES_MODULE_KEY[] = "exoplanet_predicates_mod";
+constexpr char DIST_FN_KEY[]           = "tmit_star_dist_fn";
+constexpr char GRAD_FN_KEY[]           = "tmit_star_grad_fn";
+constexpr char PREDICATES_MODULE_KEY[] = "tmit_star_predicates_mod";
 
-constexpr char TRACEBACK_FN_NAME[] = "exoplanet_err_func";
+constexpr char TRACEBACK_FN_NAME[] = "tmit_star_err_func";
 static int traceback(lua_State* L) {
   // 'message' not a string?
   if (!lua_isstring(L, 1)) {
@@ -128,18 +128,18 @@ LuaEnv::LuaEnv(std::filesystem::path predicate_file_path,
   load_c_fns(l);
   set_package_path(l);
 
-  // Get the exoplanet module
+  // Get the tmit-star module
   lua_getglobal(l, "require");
-  lua_pushstring(l, "exoplanet");
+  lua_pushstring(l, "tmit-star");
   lua_call(l, 1, 1);
 
-  // Get and store the exoplanet.dist function
+  // Get and store the tmit-star.dist function
   lua_pushstring(l, DIST_FN_KEY);
   lua_pushstring(l, "dist");
   lua_rawget(l, -3);
   lua_rawset(l, LUA_REGISTRYINDEX);
 
-  // Get and store the exoplanet.grad function
+  // Get and store the tmit-star.grad function
   lua_pushstring(l, GRAD_FN_KEY);
   lua_pushstring(l, "grad");
   lua_rawget(l, -3);
@@ -161,11 +161,11 @@ LuaEnv::LuaEnv(std::filesystem::path predicate_file_path,
 }
 
 void call_fn_with_spec(lua_State* l,
-                       const char* exoplanet_fn_name,
+                       const char* tmit_star_fn_name,
                        const std::optional<int> gradient_size,
                        const std::vector<const char*>& argument_spec) {
   // Get the function
-  lua_pushstring(l, exoplanet_fn_name);
+  lua_pushstring(l, tmit_star_fn_name);
   lua_rawget(l, LUA_REGISTRYINDEX);
 
   // Copy the function it takes as its first argument
@@ -225,13 +225,13 @@ void load_predicate(LuaEnv& lua_env,
   lua_pushstring(l, name.data());
   lua_rawget(l, -2);
 
-  // Call exoplanet.dist on the predicate function
+  // Call tmit-star.dist on the predicate function
   call_fn_with_spec(l, DIST_FN_KEY, std::nullopt, argument_types);
 
   // Store the result in the predicate function array
   lua_rawseti(l, 2, 2 * lua_env.predicate_fn_specs.size());
 
-  // Call exoplanet.grad on the predicate function
+  // Call tmit-star.grad on the predicate function
   call_fn_with_spec(l, GRAD_FN_KEY, 3 + scene_info.num_controllable_joints, argument_types);
 
   // Store the result in the predicate function array
